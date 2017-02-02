@@ -21,73 +21,99 @@
 
 	<ul class="menu-list">
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-dash">
+				<i class="icon sprite-icon"></i>
 				<span>Dashboard</span>
 			</a>
 		</li>
 		<li class="menu-list-item active">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-ord">
+				<i class="icon sprite-icon"></i>
 				<span>Orders</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-comp">
+				<i class="icon sprite-icon"></i>
 				<span>Companies</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-prod">
+				<i class="icon sprite-icon"></i>
 				<span>Products</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-doc">
+				<i class="icon sprite-icon"></i>
 				<span>Documents</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-pri">
+				<i class="icon sprite-icon"></i>
 				<span>Pricing</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-bra">
+				<i class="icon sprite-icon"></i>
 				<span>Brands</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-set">
+				<i class="icon sprite-icon"></i>
 				<span>Settings</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-rep">
+				<i class="icon sprite-icon"></i>
 				<span>Reports</span>
 			</a>
 		</li>
 		<li class="menu-list-item">
-			<a href="#" class="menu-list-element elm-icon icon">
+			<a href="#" class="menu-list-element section-acc">
+				<i class="icon sprite-icon"></i>
 				<span>Account Users</span>
 			</a>
 		</li>
 	</ul>
+
+	<a href="#" class="logout">Log out</a>
+
+	<div class="powred-by-container">
+		<img src="#" alt="Powered By Nimbl3">
+	</div>
 </nav>
 
 <main id="panel">
-
+	<header>
+		<div class="search-container">
+			<form action="#" class="search-head">
+				<input type="text" class="search-head-input">
+			</form>
+		</div>
+		<div class="header-hello-container">
+			<span class="hello-msg">Hello, Somchai</span>
+			<span class="corp-name">TWIN TYPES CORPORATION</span>
+			<i class="icon sprite-icon arrow-down"></i>
+		</div>
+	</header>
 </main>
   
   <!--build:js js/main.min.js -->
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/slideout.min.js"></script>
   <script>
-  	
-  	// var slideout = new Slideout({
-	  //   'panel': document.getElementById('panel'),
-	  //   'menu': document.getElementById('menu'),
-	  //   'padding': 256,
-	  //   'tolerance': 70
-	  // });
+  	var slideout = new Slideout({
+	    'panel': document.getElementById('panel'),
+	    'menu': document.getElementById('menu'),
+	    'padding': 256,
+	    'tolerance': 70
+	  });
   </script>
   <!-- endbuild -->
 </body>

@@ -72,16 +72,19 @@ html * {
   .active::before, #menu .menu-list-item:hover::before {
     content: '';
     width: 6px;
-    height: 40.92px;
+    height: 41px;
     background-color: #65B32E;
     border-radius: 0 17px 17px 0; }
   .active .menu-list-element, #menu .menu-list-item:hover .menu-list-element {
-    color: #FFF !important;
-    padding-left: 66.5px !important; }
+    color: #FFF !important; }
+    .active .menu-list-element .sprite-icon, #menu .menu-list-item:hover .menu-list-element .sprite-icon {
+      margin: 0px 25px 0 19px !important; }
 
 #menu {
   background: #71237E;
-  width: 246px; }
+  width: 246px;
+  display: inline-block;
+  vertical-align: top; }
   #menu .top-logo-container {
     height: 70px;
     background: #4D1463;
@@ -89,17 +92,39 @@ html * {
   #menu .menu-list-item {
     transition: .5s; }
     #menu .menu-list-item .menu-list-element {
-      padding-left: 70.5px;
-      font-family: Montserrat-Regular;
+      font-family: Montserrat-Light;
       font-size: 14px;
       font-weight: 600;
       line-height: 34px;
       color: #D18EE2;
       text-decoration: none; }
-    #menu .menu-list-item .elm-icon {
-      /*          background: url('../images/sprite.png') no-repeat;*/ }
+      #menu .menu-list-item .menu-list-element .sprite-icon {
+        background-image: url("../images/controls-purple.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 17px;
+        height: 17px;
+        margin: 0px 25px; }
+  #menu .logout {
+    display: block;
+    width: 47px;
+    height: 15px;
+    margin: 46px 0 0 35px;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 15px;
+    font-family: Montserrat-Light;
+    color: #D18EE2; }
+
+#panel {
+  display: inline-block;
+  vertical-align: top; }
 
 @media screen and (max-width: 767px) {
+  .active::before, #menu .menu-list-item:hover::before {
+    background-color: #FFCC00; }
+  #menu .top-logo-container {
+    background: transparent; }
   .slideout-menu {
     position: fixed;
     top: 0;

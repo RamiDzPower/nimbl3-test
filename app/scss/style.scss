@@ -6,9 +6,18 @@ $purpule-menu : #71237E;
 $dark-purpule-menu : #4D1463;
 $menu-element : #D18EE2;
 $menu-hover : rgba(76,19,103,0.5);
+$menu-left-border-hover : #65B32E;
+$menu-left-border-hover-mobile : #FFCC00;
+$menu-overlay : #6C6D6D;
 /*$menu-box-shadow : 0 -1px 0 0 #4C1367, 0 1px 0 0 #4C1367;*/
 $white-color: #FFF;
 
+
+
+@mixin content-allignement{
+	display: inline-block;
+	vertical-align: top;
+}
 
 %menu-item-elm-allignement{
     display: flex;
@@ -24,21 +33,27 @@ $white-color: #FFF;
     &::before{
       content: '';
       width: 6px;
-      height: 40.92px;
-      background-color: #65B32E;
+      height: 41px;
+      background-color: $menu-left-border-hover;
       border-radius: 0 17px 17px 0;      
     }
     .menu-list-element{
       color: $white-color !important;
-      padding-left: 66.5px !important;
+	    .sprite-icon  {
+	      	margin: 0px 25px 0 19px !important;
+	      }
     }
 }
+
+
+
+
 
 
 #menu {
   background: $purpule-menu;
   width: 246px;
-  
+  @include content-allignement;
     .top-logo-container{
       height: 70px;
       background: $dark-purpule-menu;
@@ -55,22 +70,40 @@ $white-color: #FFF;
 
         .menu-list-element{
           @extend %menu-item-elm-allignement;
-          padding-left: 70.5px;
-          font-family: Montserrat-Regular;
+          font-family: Montserrat-Light;
           font-size: 14px;
           font-weight: 600;
           line-height: 34px;
           color: $menu-element;
           text-decoration: none;
+	        .sprite-icon{
+	          background-image: url('../images/controls-purple.svg');
+	          background-repeat: no-repeat;
+	          background-size: 100%;
+	          width: 17px;
+	          height: 17px;
+	          margin: 0px 25px;
+	      } 
         }
-
-        .elm-icon{
-/*          background: url('../images/sprite.png') no-repeat;*/        } 
     }
 
+    .logout	{
+    	display: block;
+    	width: 47px;
+		height: 15px;
+		margin: 46px 0 0 35px;
+		font-size: 12px;
+		text-decoration: none;
+		line-height: 15px;
+		font-family: Montserrat-Light;
+		color: $menu-element;
+    }
+}
 
 
 
+#panel{
+  @include content-allignement;	
 }
 
 
@@ -85,9 +118,20 @@ $white-color: #FFF;
 
 
 
-
-
 @media screen and (max-width: 767px){
+	.active{
+
+	    &::before{
+	      background-color: $menu-left-border-hover-mobile;    
+	    }
+	}	
+	#menu {
+		.top-logo-container {
+		    background: transparent;
+		}
+	}
+
+
     .slideout-menu {
       position: fixed;
       top: 0;
