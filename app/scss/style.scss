@@ -1,0 +1,128 @@
+@import 'partials/reset';
+@import 'partials/fonts';
+
+
+$purpule-menu : #71237E;
+$dark-purpule-menu : #4D1463;
+$menu-element : #D18EE2;
+$menu-hover : rgba(76,19,103,0.5);
+/*$menu-box-shadow : 0 -1px 0 0 #4C1367, 0 1px 0 0 #4C1367;*/
+$white-color: #FFF;
+
+
+%menu-item-elm-allignement{
+    display: flex;
+    align-items: center;
+    height: 67px;
+    width: 100%; 
+}
+
+.active{
+    background-color: $menu-hover;
+    box-shadow: 0 -1px 0 0 #4C1367, 0 1px 0 0 #4C1367;
+
+    &::before{
+      content: '';
+      width: 6px;
+      height: 40.92px;
+      background-color: #65B32E;
+      border-radius: 0 17px 17px 0;      
+    }
+    .menu-list-element{
+      color: $white-color !important;
+      padding-left: 66.5px !important;
+    }
+}
+
+
+#menu {
+  background: $purpule-menu;
+  width: 246px;
+  
+    .top-logo-container{
+      height: 70px;
+      background: $dark-purpule-menu;
+      margin-bottom: 10px;
+    }
+
+    .menu-list-item{
+      @extend %menu-item-elm-allignement;
+      transition: .5s;
+
+            &:hover{
+              @extend .active;
+            }
+
+        .menu-list-element{
+          @extend %menu-item-elm-allignement;
+          padding-left: 70.5px;
+          font-family: Montserrat-Regular;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 34px;
+          color: $menu-element;
+          text-decoration: none;
+        }
+
+        .elm-icon{
+/*          background: url('../images/sprite.png') no-repeat;*/        } 
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px){
+    .slideout-menu {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 256px;
+      min-height: 100vh;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      z-index: 0;
+      display: none;
+    }
+
+    .slideout-menu-left {
+      left: 0;
+    }
+
+    .slideout-menu-right {
+      right: 0;
+    }
+
+    .slideout-panel {
+      position: relative;
+      z-index: 1;
+      will-change: transform;
+      background-color: #FFF; /* A background-color is required */
+      min-height: 100vh;
+    }
+
+    .slideout-open,
+    .slideout-open body,
+    .slideout-open .slideout-panel {
+      overflow: hidden;
+    }
+
+    .slideout-open .slideout-menu {
+      display: block;
+    }
+}

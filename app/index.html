@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible Content-Type" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title></title>
   <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="css/style.css">
@@ -10,8 +14,81 @@
 </head>
 
 <body>
+<nav id="menu">
+	<div class="top-logo-container">
+		<img src="#" alt="Nimble Logo">
+	</div>
+
+	<ul class="menu-list">
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Dashboard</span>
+			</a>
+		</li>
+		<li class="menu-list-item active">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Orders</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Companies</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Products</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Documents</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Pricing</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Brands</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Settings</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Reports</span>
+			</a>
+		</li>
+		<li class="menu-list-item">
+			<a href="#" class="menu-list-element elm-icon icon">
+				<span>Account Users</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<main id="panel">
+
+</main>
   
   <!--build:js js/main.min.js -->
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/slideout.min.js"></script>
+  <script>
+  	
+  	// var slideout = new Slideout({
+	  //   'panel': document.getElementById('panel'),
+	  //   'menu': document.getElementById('menu'),
+	  //   'padding': 256,
+	  //   'tolerance': 70
+	  // });
+  </script>
   <!-- endbuild -->
 </body>
 
