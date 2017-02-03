@@ -9,7 +9,6 @@ $menu-hover : rgba(76,19,103,0.5);
 $menu-left-border-hover : #65B32E;
 $menu-left-border-hover-mobile : #FFCC00;
 $menu-overlay : #6C6D6D;
-/*$menu-box-shadow : 0 -1px 0 0 #4C1367, 0 1px 0 0 #4C1367;*/
 $white-color: #FFF;
 
 
@@ -17,6 +16,24 @@ $white-color: #FFF;
 @mixin content-allignement{
 	display: inline-block;
 	vertical-align: top;
+}
+@mixin icon-setting{
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../images/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 2.4em 47em;
+	width: 17px;
+	height: 17px;
+}
+
+@mixin icon-list ($purp_x,$purp_y,$white_x,$white_y){
+	.sprite-icon {
+                background-position: $purp_x $purp_y;
+            }
+     &:hover .sprite-icon{
+                background-position: $white_x $white_y;     	
+     }       
 }
 
 %menu-item-elm-allignement{
@@ -42,9 +59,36 @@ $white-color: #FFF;
 	    .sprite-icon  {
 	      	margin: 0px 25px 0 19px !important;
 	      }
-      .section-ord .sprite-icon {
-          background-position: 0em -3.6em;
-        }
+    }    
+    .section-dash .sprite-icon {
+    	background-position:0em -1.2em !important;
+    }
+    .section-ord .sprite-icon {
+    	background-position:0em -3.6em !important;
+    }
+    .section-comp .sprite-icon{
+    	background-position:0em -6em !important;
+    }
+    .section-prod .sprite-icon {
+    	background-position:0em -8.4em !important;
+    }
+    .section-doc .sprite-icon {
+    	background-position:0em -10.8em !important;
+    }
+    .section-pri .sprite-icon{
+    	background-position: 0em -13.3em !important;
+    }
+    .section-bra .sprite-icon{
+    	background-position: 0em -15.7em !important;
+    }
+    .section-set .sprite-icon{
+    	background-position:0em -18em !important;
+    }
+    .section-rep .sprite-icon{
+    	background-position:0em -20.5em !important;
+    }
+    .section-acc .sprite-icon{
+    	background-position:0em -22.8em !important;
     }
 }
 
@@ -70,46 +114,37 @@ $white-color: #FFF;
             &:hover{
               @extend .active;
             }
-            .section-dash .sprite-icon {
-                background-position: 0em 0em;
+            .section-dash  {
+            	@include icon-list(0em,0em,0em,-1.2em);
             }
-            .section-ord .sprite-icon {
-                background-position: 0em -2.4em;
+            .section-ord  {
+            	@include icon-list(0em,-2.4em,0em,-3.6em);
             }
-            .section-comp .sprite-icon {
-                background-position: 0em -4.8em;
+            .section-comp {
+            	@include icon-list(0em,-4.8em,0em,-6em);
             }
-
-            .section-prod .sprite-icon {
-                background-position: 0em -7.2em;
+            .section-prod {
+            	@include icon-list(0em,-7.2em,0em,-8.4em);
             }
-
-
-            .section-doc .sprite-icon {
-                background-position: 0em -9.67em;
+            .section-doc {
+            	@include icon-list(0em,-9.67em,0em,-10.8em);
             }
-
-
-            .section-pri .sprite-icon {
-                background-position: 0em -12.05em;
+            .section-pri {
+            	@include icon-list(0em,-12.05em,0em,-13.3em);
             }
-
-
-            .section-bra .sprite-icon {
-                background-position: 0em -14.4em;
+            .section-bra {
+            	@include icon-list(0em,-14.4em,0em,-15.7em);
             }
-
-            .section-set .sprite-icon {
-                background-position: 0em -16.9em;
+            .section-set {
+            	@include icon-list(0em,-16.85em,0em,-18em);
+            }
+            .section-rep {
+            	@include icon-list(0em,-19.3em,0em,-20.5em);
+            }
+            .section-acc {
+            	@include icon-list(0em,-21.7em,0em,-22.8em);
             }
 
-            .section-rep .sprite-icon {
-                background-position: 0em -19.3em;
-            }
-
-            .section-acc .sprite-icon {
-                background-position: 0em -21.7em;
-            }            
         .menu-list-element{
           @extend %menu-item-elm-allignement;
           font-family: Montserrat-Light;
@@ -118,74 +153,18 @@ $white-color: #FFF;
           line-height: 34px;
           color: $menu-element;
           text-decoration: none;
+          position: relative;
 	        .sprite-icon{
-            vertical-align:middle;
-            display: inline-block;
-            background-image: url("../images/sprite.svg");
-            background-repeat: no-repeat;
-            background-size: 2.4em 47em;
-	          width: 17px;
-	          height: 17px;
-	          margin: 0px 25px;
+	        	@include icon-setting;
+	          	margin: 0px 25px;
 	       } 
-          
-
-
-
-
-
-           /* .section-dash .sprite-icon {
-                background-position: 0em -1.2em;
-            }
-            .section-comp .sprite-icon {
-                background-position: 0em -6em;
-            }
-
-
-            .section-prod .sprite-icon.08-box-white {
-                background-position: 0em -8.4em;
-            }
-
-            .section-doc .sprite-icon.10-document-white {
-                background-position: 0em -10.8em;
-            }
-
-
-            .section-pri .sprite-icon.12-pricing-label-white {
-                background-position: 0em -13.3em;
-            }
-
-            .section-bra .sprite-icon.14-shapes-white {
-                background-position: 0em -17.7em;
-            }
-
-            .section-set .sprite-icon.16-gear-white {
-                background-position: 0em -18em;
-            }
-
-            .section-rep .sprite-icon.18-chart-white {
-                background-position: 0em -20.5em;
-            }
-
-            .section-acc .sprite-icon.20-people-white {
-                background-position: 0em -22.7em;
-            }
-            */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+        .elm-arrow-left::after {
+        	content:'';
+	        @include icon-setting;
+	        background-position: 0em -25.3em;
+	        position: absolute;
+    		right: 5px
         }
     }
 
