@@ -79,6 +79,8 @@ html * {
     color: #FFF !important; }
     .active .menu-list-element .sprite-icon, #menu .menu-list-item:hover .menu-list-element .sprite-icon {
       margin: 0px 25px 0 19px !important; }
+    .active .menu-list-element .section-ord .sprite-icon, #menu .menu-list-item:hover .menu-list-element .section-ord .sprite-icon {
+      background-position: 0em -3.6em; }
 
 #menu {
   background: #71237E;
@@ -91,17 +93,76 @@ html * {
     margin-bottom: 10px; }
   #menu .menu-list-item {
     transition: .5s; }
+    #menu .menu-list-item .section-dash .sprite-icon {
+      background-position: 0em 0em; }
+    #menu .menu-list-item .section-ord .sprite-icon {
+      background-position: 0em -2.4em; }
+    #menu .menu-list-item .section-comp .sprite-icon {
+      background-position: 0em -4.8em; }
+    #menu .menu-list-item .section-prod .sprite-icon {
+      background-position: 0em -7.2em; }
+    #menu .menu-list-item .section-doc .sprite-icon {
+      background-position: 0em -9.67em; }
+    #menu .menu-list-item .section-pri .sprite-icon {
+      background-position: 0em -12.05em; }
+    #menu .menu-list-item .section-bra .sprite-icon {
+      background-position: 0em -14.4em; }
+    #menu .menu-list-item .section-set .sprite-icon {
+      background-position: 0em -16.9em; }
+    #menu .menu-list-item .section-rep .sprite-icon {
+      background-position: 0em -19.3em; }
+    #menu .menu-list-item .section-acc .sprite-icon {
+      background-position: 0em -21.7em; }
     #menu .menu-list-item .menu-list-element {
       font-family: Montserrat-Light;
       font-size: 14px;
       font-weight: 600;
       line-height: 34px;
       color: #D18EE2;
-      text-decoration: none; }
+      text-decoration: none;
+      /* .section-dash .sprite-icon {
+                background-position: 0em -1.2em;
+            }
+            .section-comp .sprite-icon {
+                background-position: 0em -6em;
+            }
+
+
+            .section-prod .sprite-icon.08-box-white {
+                background-position: 0em -8.4em;
+            }
+
+            .section-doc .sprite-icon.10-document-white {
+                background-position: 0em -10.8em;
+            }
+
+
+            .section-pri .sprite-icon.12-pricing-label-white {
+                background-position: 0em -13.3em;
+            }
+
+            .section-bra .sprite-icon.14-shapes-white {
+                background-position: 0em -17.7em;
+            }
+
+            .section-set .sprite-icon.16-gear-white {
+                background-position: 0em -18em;
+            }
+
+            .section-rep .sprite-icon.18-chart-white {
+                background-position: 0em -20.5em;
+            }
+
+            .section-acc .sprite-icon.20-people-white {
+                background-position: 0em -22.7em;
+            }
+            */ }
       #menu .menu-list-item .menu-list-element .sprite-icon {
-        background-image: url("../images/controls-purple.svg");
+        vertical-align: middle;
+        display: inline-block;
+        background-image: url("../images/sprite.svg");
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 2.4em 47em;
         width: 17px;
         height: 17px;
         margin: 0px 25px; }
@@ -125,6 +186,10 @@ html * {
     background-color: #FFCC00; }
   #menu .top-logo-container {
     background: transparent; }
+    #menu .top-logo-container img {
+      width: 150px;
+      display: block;
+      margin: 0 auto; }
   .slideout-menu {
     position: fixed;
     top: 0;

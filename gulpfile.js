@@ -11,6 +11,8 @@ var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
 var purify = require('gulp-purifycss');
+var svgSprite = require("gulp-svg-sprites");
+
 
 // Basic Gulp task syntax
 // gulp.task('hello', function() {
@@ -93,6 +95,12 @@ gulp.task('csspure', function() {
   return gulp.src('app/css/**/*.css')
     .pipe(purify(['/app/js/**/*.js', 'app/**/*.html']))
     .pipe(gulp.dest('app/testpure'));
+});
+
+gulp.task('sprites', function () {
+    return gulp.src('app/images/*.svg')
+        .pipe(svgSprite())
+        .pipe(gulp.dest("app/assets"));
 });
 
 // Build Sequences

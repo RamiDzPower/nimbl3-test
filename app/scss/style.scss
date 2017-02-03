@@ -42,6 +42,9 @@ $white-color: #FFF;
 	    .sprite-icon  {
 	      	margin: 0px 25px 0 19px !important;
 	      }
+      .section-ord .sprite-icon {
+          background-position: 0em -3.6em;
+        }
     }
 }
 
@@ -67,7 +70,46 @@ $white-color: #FFF;
             &:hover{
               @extend .active;
             }
+            .section-dash .sprite-icon {
+                background-position: 0em 0em;
+            }
+            .section-ord .sprite-icon {
+                background-position: 0em -2.4em;
+            }
+            .section-comp .sprite-icon {
+                background-position: 0em -4.8em;
+            }
 
+            .section-prod .sprite-icon {
+                background-position: 0em -7.2em;
+            }
+
+
+            .section-doc .sprite-icon {
+                background-position: 0em -9.67em;
+            }
+
+
+            .section-pri .sprite-icon {
+                background-position: 0em -12.05em;
+            }
+
+
+            .section-bra .sprite-icon {
+                background-position: 0em -14.4em;
+            }
+
+            .section-set .sprite-icon {
+                background-position: 0em -16.9em;
+            }
+
+            .section-rep .sprite-icon {
+                background-position: 0em -19.3em;
+            }
+
+            .section-acc .sprite-icon {
+                background-position: 0em -21.7em;
+            }            
         .menu-list-element{
           @extend %menu-item-elm-allignement;
           font-family: Montserrat-Light;
@@ -77,13 +119,73 @@ $white-color: #FFF;
           color: $menu-element;
           text-decoration: none;
 	        .sprite-icon{
-	          background-image: url('../images/controls-purple.svg');
-	          background-repeat: no-repeat;
-	          background-size: 100%;
+            vertical-align:middle;
+            display: inline-block;
+            background-image: url("../images/sprite.svg");
+            background-repeat: no-repeat;
+            background-size: 2.4em 47em;
 	          width: 17px;
 	          height: 17px;
 	          margin: 0px 25px;
-	      } 
+	       } 
+          
+
+
+
+
+
+           /* .section-dash .sprite-icon {
+                background-position: 0em -1.2em;
+            }
+            .section-comp .sprite-icon {
+                background-position: 0em -6em;
+            }
+
+
+            .section-prod .sprite-icon.08-box-white {
+                background-position: 0em -8.4em;
+            }
+
+            .section-doc .sprite-icon.10-document-white {
+                background-position: 0em -10.8em;
+            }
+
+
+            .section-pri .sprite-icon.12-pricing-label-white {
+                background-position: 0em -13.3em;
+            }
+
+            .section-bra .sprite-icon.14-shapes-white {
+                background-position: 0em -17.7em;
+            }
+
+            .section-set .sprite-icon.16-gear-white {
+                background-position: 0em -18em;
+            }
+
+            .section-rep .sprite-icon.18-chart-white {
+                background-position: 0em -20.5em;
+            }
+
+            .section-acc .sprite-icon.20-people-white {
+                background-position: 0em -22.7em;
+            }
+            */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 
@@ -128,6 +230,12 @@ $white-color: #FFF;
 	#menu {
 		.top-logo-container {
 		    background: transparent;
+
+          img{
+                width: 150px;
+                display: block;
+                margin: 0 auto;
+          }
 		}
 	}
 
