@@ -90,18 +90,193 @@
 </nav>
 
 <main id="panel">
-	<header>
+	<header class="content-header">
 		<div class="search-container">
 			<form action="#" class="search-head">
-				<input type="text" class="search-head-input">
+				<span class="icon-search">
+					<input type="text" placeholder="Search here" class="search-head-input">					
+				</span>
 			</form>
 		</div>
 		<div class="header-hello-container">
 			<span class="hello-msg">Hello, Somchai</span>
-			<span class="corp-name">TWIN TYPES CORPORATION</span>
-			<i class="icon sprite-icon arrow-down"></i>
+			<a href="#" class="corp-name">TWIN TYPES CORPORATION
+				<i class="icon sprite-icon arrow-down"></i>
+			</a>
 		</div>
 	</header>
+
+	<div class="content-wrap">
+		<p class="order-head">
+			<span class="order-label">Orders / </span>
+			<span class="order-serial">TN SO 000015</span>
+		</p>
+
+		<div class="first-line">
+			<div class="addition-container">
+				<div class="name-address-container">
+					<p class="name-comp">CFP Saraburi</p>
+					<p class="address-comp">Highway 2, Kaeng Khoi Saraburi Thailand</p>
+					<p class="phone-comp">+66 087348 79 84</p>
+				</div>
+
+				<div class="dropdown-container">
+					<div class="single-drop">
+						<label for="#">Type</label>
+						<select name="#" id="#">
+							<option value="1">Retailers</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
+					<div class="single-drop">
+						<label for="#">Owened By</label>
+						<select name="#" id="#">
+							<option value="1">Tom Hanks</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
+					<div class="single-drop">
+						<label for="#">Status</label>
+						<select name="#" id="#">
+							<option value="1">Panding</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="update-back-container">
+				<a href="#" class="btn-back">Back</a>
+				<a href="#" class="btn-update">update Order</a>
+			</div>
+		</div>
+
+		<div class="second-line">
+			<form action="#" class="add-prod-form">
+				<i class="icon sprits-icon"></i>
+				<input type="text" placeholder="Add Products" class="add-prod-input">
+			</form>
+		</div>
+
+		<div class="third-line">
+			<table class="tab-product">
+				 <thead>
+				 	<tr>
+				 		<td>sku</td>
+				 		<td>description</td>
+				 		<td>brand</td>
+				 		<td>list price</td>
+				 		<td>discount</td>
+				 		<td>net price</td>
+				 		<td>qty</td>
+				 		<td>total</td>
+				 		<td></td>
+				 	</tr>
+				 </thead>
+
+				 <tbody>
+				 	<tr>
+				 		<td>TN SO 000015</td>
+				 		<td class="desc-td">Magnetic Contractor - 9A (5.5kW\ ,7.5HP)\, control voltage 230 vac</td>
+				 		<td>Schnider Electric</td>
+				 		<td>THB 880</td>
+				 		<td>30%</td>
+				 		<td>THB 660</td>
+				 		<td>16 <a href="#" class="edit-qty"><i class="icon sprite-icon edit-tab-icon"></i></a></td>
+				 		<td>THB 50,079,8823</td>
+				 		<td><a href="#" class="remove-item">Remove Item</a></td>
+				 	</tr>
+				 	<tr class="odd-tr">
+				 		<td>TN SO 000015</td>
+				 		<td class="desc-td">Magnetic Contractor - 9A (5.5kW\ ,7.5HP)\, control voltage 230 vac</td>
+				 		<td>Schnider Electric</td>
+				 		<td>THB 880</td>
+				 		<td>30%</td>
+				 		<td>THB 660</td>
+				 		<td>16 <a href="#" class="edit-qty"><i class="icon sprite-icon edit-tab-icon"></i></a></td>
+				 		<td>THB 50,079,8823</td>
+				 		<td><a href="#" class="remove-item">Remove Item</a></td>
+				 	</tr>
+				 	<tr>
+				 		<td>TN SO 000015</td>
+				 		<td class="desc-td">Magnetic Contractor - 9A (5.5kW\ ,7.5HP)\, control voltage 230 vac</td>
+				 		<td>Schnider Electric</td>
+				 		<td>THB 880</td>
+				 		<td>30%</td>
+				 		<td>THB 660</td>
+				 		<td>16 <a href="#" class="edit-qty"><i class="icon sprite-icon edit-tab-icon"></i></a></td>
+				 		<td>THB 50,079,8823</td>
+				 		<td><a href="#" class="remove-item">Remove Item</a></td>
+				 	</tr>
+				 	<tr class="odd-tr">
+				 		<td>TN SO 000015</td>
+				 		<td class="desc-td">Magnetic Contractor - 9A (5.5kW\ ,7.5HP)\, control voltage 230 vac</td>
+				 		<td>Schnider Electric</td>
+				 		<td><a href="#" class="set-price">Set Price</a></td>
+				 		<td>30%</td>
+				 		<td><a href="#" class="set-price">Set Price</a></td>
+				 		<td>16 <a href="#" class="edit-qty"><i class="icon sprite-icon edit-tab-icon"></i></a></td>
+				 		<td><a href="#" class="set-price">Set Price</a></td>
+				 		<td><a href="#" class="remove-item">Remove Item</a></td>
+				 	</tr>
+				 	<tr class="odd-tr">
+				 		<td>TN SO 000015</td>
+				 		<td class="desc-td">Magnetic Contractor - 9A (5.5kW\ ,7.5HP)\, control voltage 230 vac</td>
+				 		<td>Schnider Electric</td>
+				 		<td>THB 880</td>
+				 		<td>30%</td>
+				 		<td>THB 660</td>
+				 		<td>16 <a href="#" class="edit-qty"><i class="icon sprite-icon edit-tab-icon"></i></a></td>
+				 		<td>THB 50,079,8823</td>
+				 		<td><a href="#" class="remove-item">Remove Item</a></td>
+				 	</tr>
+				 </tbody>
+			</table>
+		</div>
+
+		<div class="forth-line">
+			<h4 class="forth-head">Remarks</h4>
+			<div class="remark-container">
+				<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+			</div>
+		</div>
+
+		<div class="popup-container">
+			<div class="pop-elm-wrap">
+				<label for="#">Estimated Delivery Date</label>
+				<input type="text" placeholder="14-10-2016" class="estimated-input">
+			</div>
+			<hr>
+			<div class="pop-elm-wrap">
+				<label for="#">Sub Total</label>
+				<span class="sub-total-span">40,033</span>
+			</div>
+			<div class="pop-elm-wrap">
+				<label for="#">Shipping</label>
+				<input type="text" placeholder="0" class="estimated-input">
+			</div>
+			<div class="pop-elm-wrap">
+				<label for="#">Special Discount</label>
+				<input type="text" placeholder="9.999.999" class="estimated-input">
+			</div>
+			<div class="pop-elm-wrap">
+				<label for="#">Tax</label>
+				<div class="container">
+					<input type="text" placeholder="7" class="tax-input">
+					<span class="tax-span">% 1,862.00</span>					
+				</div>
+			</div>
+			<hr>
+			<div class="pop-elm-wrap">
+				<label for="#">Total</label>
+				<span class="total-span">THB 41,585.31</span>
+			</div>
+		</div>
+		
+	</div>
 </main>
   
   <!--build:js js/main.min.js -->
