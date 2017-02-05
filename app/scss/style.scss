@@ -119,6 +119,12 @@ body{
     }
 }
 
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+    width: 100%;
+}
+
 #menu {
   background: $purpule-menu;
   width: 246px;
@@ -418,9 +424,6 @@ body{
 
 					.tab-product{
 						width: 100%;
-							tr{
-								/*opacity: 0.4;*/
-							}
 
 							thead{
 									td{
@@ -487,8 +490,69 @@ body{
 							}
 					}
 			}
+	}
 
-			.popup-container{
+	.popup-container{
+		width: 100%;
+    	position: relative;
+    	display: none;
+    	z-index: 99999;
+
+			.add-table-container{
+				position: absolute;
+				width: 94%;
+				left: 30px;
+    			bottom: 450px;
+
+					.tab-add-prod{
+						width: 100%;
+						background: #fff;
+						border: 1px solid $border-color;
+						border-top: none;
+
+							tbody{
+								tr{
+									box-shadow: 0 -1px 0 0 $border-color;
+
+										td{
+											font-family: $main-font;
+											font-size: 11px;
+											line-height: 14px;
+											color: $light-grey-color;
+											padding: 10px;
+											vertical-align: middle;
+
+												.add-pop-input{
+													width: 34px;
+													height: 30px;
+													border: 1px solid $light-grey-color;
+													border-radius: 4px;
+													text-align: center;
+												}
+												.btn-pop-add{
+													width: 50px;
+													height: 24px;
+													color: $white-color;
+													background-color: $light-grey-color;
+													border-radius: 4px;
+													display: inline-block;
+												    vertical-align: top;
+												    text-align: center;
+												    text-decoration: none;
+												    padding-top: 10px;
+												}
+										}
+										.add-prod-name{
+											font-size: 12px;
+											line-height: 15px;
+											color: #64707C;
+										}
+								}
+							}
+					}
+			}
+
+	    	.esti-box-container{
 				display: flex;
 			    flex-direction: column;
 			    justify-content: space-between;
@@ -501,53 +565,59 @@ body{
 			    right: 40px;
 			    bottom: 90px;
 
-					hr {
-					    box-sizing: border-box;
+				hr {
+				    box-sizing: border-box;
+				    width: 100%;
+				    border: 1px solid #F1F0F4;
+				}
+				.pop-elm-wrap{
 					    width: 100%;
-					    border: 1px solid #F1F0F4;
-					}
-					
-					.pop-elm-wrap{
-						    width: 100%;
-						    display: flex;
-						    justify-content: space-between;
-						    align-items: center;
+					    display: flex;
+					    justify-content: space-between;
+					    align-items: center;
 
-								label{
-									font-size: 11px;
-									font-family: $main-font-bold;
-									text-align: center;
-									line-height: 14px;
-									color: $dark-grey-color;
-								}
-								.estimated-input{
-									width: 80px;
-									@extend %popup-input;
-								}
-								.tax-input{
-									width: 20px;
-									@extend %popup-input;
-								}
-								.sub-total-span{
-									font-size: 12px;
-									line-height: 15px;
-									color: $light-grey-color;
-								}
-								.tax-span{
-									font-size: 11px;
-									line-height: 14px;
-									color: $light-grey-color;
-								}
-								.total-span{
-									font-size: 18px;
-									font-family: $main-font-bold;
-									line-height: 22px;
-									color: $dark-grey-color;
-								}
-					}
-			}
+							label{
+								font-size: 11px;
+								font-family: $main-font-bold;
+								text-align: center;
+								line-height: 14px;
+								color: $dark-grey-color;
+							}
+							.estimated-input{
+								width: 80px;
+								@extend %popup-input;
+							}
+							.tax-input{
+								width: 20px;
+								@extend %popup-input;
+							}
+							.sub-total-span{
+								font-size: 12px;
+								line-height: 15px;
+								color: $light-grey-color;
+							}
+							.tax-span{
+								font-size: 11px;
+								line-height: 14px;
+								color: $light-grey-color;
+							}
+							.total-span{
+								font-size: 18px;
+								font-family: $main-font-bold;
+								line-height: 22px;
+								color: $dark-grey-color;
+							}
+				}
+	    	}
 	}
 
+	.blur{
+		position: relative;
+		z-index: 300;
+	    opacity: .6;
+    	transition: opacity .3s;
+        background: #000;
+	}
 }
 
 
@@ -570,6 +640,7 @@ body{
 	    }
 	}	
 	#menu {
+		display: none;
 		.top-logo-container {
 		    background: transparent;
 
@@ -581,8 +652,77 @@ body{
 		}
 	}
 
+	.table-responsive {
+	    width: 100%;
+	    overflow-y: hidden;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	}
 
-    .slideout-menu {
+	#panel {
+	    max-width: initial;
+	    min-height: initial;
+	    width: 100%;
+	    	.content-header{
+	    		.header-hello-container{
+	    			display: none;
+	    		}
+	    	}
+		    .content-wrap {
+			    padding: 20px 10px;
+			    min-height: initial;
+			    width: 100%;
+
+			    	.order-head{
+			    		display: none;
+			    	}
+			    	.first-line {
+					    flex-direction: column;
+					    align-content: flex-start;
+						align-items: flex-start;
+
+						    .addition-container {
+							    flex-direction: column;
+							    align-items: flex-start;
+							    height: 100%;
+							    width: 100%;
+							    background: transparent;
+    							border: none;
+    							padding: 10px 0;
+
+    								.dropdown-container{
+    									width: 100%;
+    									flex-direction: column;
+    									align-items: flex-start;
+
+	    									.single-drop {
+											    display: flex;
+											    flex-direction: column;
+											    align-items: flex-start;
+											    width: 100%;
+
+											    	&:first-child{
+											    		display: none;
+											    	}
+											    	select {
+													    width: 95%;
+													    height: 45px;
+													    margin: 5px 0 15px 0;
+													}
+											}
+    								}
+							}
+							.update-back-container {
+
+									.btn-back {
+										display: none;
+									}
+							}
+					}
+			}
+	}
+
+
+/*    .slideout-menu {
       position: fixed;
       top: 0;
       bottom: 0;
@@ -606,7 +746,7 @@ body{
       position: relative;
       z-index: 1;
       will-change: transform;
-      background-color: #FFF; /* A background-color is required */
+      background-color: #FFF; 
       min-height: 100vh;
     }
 
@@ -618,5 +758,5 @@ body{
 
     .slideout-open .slideout-menu {
       display: block;
-    }
+    }*/
 }
