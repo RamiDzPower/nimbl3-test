@@ -99,7 +99,8 @@
 		<div class="search-container">
 			<form action="#" class="search-head">
 				<span class="icon-search">
-					<input type="text" placeholder="Search here" class="search-head-input">					
+					<input type="text" placeholder="Search here" class="search-head-input">
+					<i class="icon sprite-icon btn-toggle"></i>				
 				</span>
 			</form>
 		</div>
@@ -161,7 +162,7 @@
 
 		<div class="second-line">
 			<form action="#" class="add-prod-form">
-				<i class="icon sprits-icon"></i>
+				<i class="icon sprits-icon icon-add-prod"></i>
 				<input type="text" placeholder="Add Products" class="add-prod-input" id="add-prod-input">
 			</form>
 		</div>
@@ -366,17 +367,23 @@
 	$("#add-prod-input").focus(function(){
 			$(".content-header").addClass("blur");
 			$(".content-wrap").addClass("blur");
+			$(".icon-add-prod").addClass("icon-remove-prod");
 		}).blur(function(){
 			$(".content-header").removeClass("blur");
 			$(".content-wrap").removeClass("blur");
+			$(".icon-add-prod").removeClass("icon-remove-prod");
 		});
 
-  	// var slideout = new Slideout({
-	  //   'panel': document.getElementById('panel'),
-	  //   'menu': document.getElementById('menu'),
-	  //   'padding': 256,
-	  //   'tolerance': 70
-	  // });
+  	var slideout = new Slideout({
+	    'panel': document.getElementById('panel'),
+	    'menu': document.getElementById('menu'),
+	    'padding': 256,
+	    'tolerance': 70
+	  });
+
+  	document.querySelector('.btn-toggle').addEventListener('click', function() {
+        slideout.toggle();
+      });
   </script>
   <!-- endbuild -->
 </body>
