@@ -438,6 +438,11 @@ body{
 							.icon{
 								@include icon-setting;
 								background-position: 0em -32.5em;
+								transition: .6s;
+								cursor: pointer;
+							}
+							.icon-remove-prod{
+								    transform: rotate(45deg);
 							}
 							.add-prod-input{
 								display: inline-block;
@@ -732,13 +737,18 @@ body{
 	    }
 	}	
 	#menu {
-		display: none;
+		width: 256px !important;
+		position: fixed;
 		.top-logo-container {
 		    background: transparent;
 		}
 		.header-hello-container{
 			display: flex;
 		}
+    	.powred-by-container{
+    		position: static;
+    		margin-bottom: 25px;
+    	}
 	}
 
 	.table-responsive {
@@ -761,18 +771,32 @@ body{
 	    		height: 66.5px;
 
 	    			.icon-search{
+	    				display: flex;
+	    				width: 100%;
+	    				justify-content: center;
+    					align-items: center;
 
-	    				&::before{
-	    					margin-top:10px;
-	    					margin-left: 5px !important;
-	    				}
-	    				.search-head-input{
-	    					font-size: 15px;
-	    					background: #71237E;
-	    					width: 80% !important;
-	    					height: 64px !important;
-	    					color: #fff !important;
-	    				}
+		    				&::before{
+		    					order: 3;
+		    					margin-top:10px;
+		    					margin-left: 5px !important;
+		    				}
+		    				.search-head-input{
+		    					order: 2;
+		    					font-size: 15px;
+		    					background: #71237E;
+		    					width: 80% !important;
+		    					height: 64px !important;
+		    					color: #fff !important;
+		    				}
+		    				.btn-toggle{
+						        @include icon-setting;
+							    background-position: 0em -26.5em;
+							    margin-left: -10px;
+							    margin-right: 10px;
+							    cursor: pointer;
+							    transform: rotate(180deg);
+		    				}
 	    			}
 	    		.header-hello-container{
 	    			display: none;
@@ -817,7 +841,7 @@ body{
     								}	
 
     								.dropdown-container{
-    									width: 100%;
+    									width: 96%;
     									padding: 0 10px;
     									flex-direction: column;
     									align-items: flex-start;
@@ -841,7 +865,7 @@ body{
 							}
 							.update-back-container {
 
-								width: 100%;
+								width: 96%;
 								padding: 0 10px;
 								align-items: flex-end;
     							justify-content: flex-start;
@@ -879,7 +903,7 @@ body{
 	}
 
 
-/*    .slideout-menu {
+    .slideout-menu {
       position: fixed;
       top: 0;
       bottom: 0;
@@ -915,5 +939,5 @@ body{
 
     .slideout-open .slideout-menu {
       display: block;
-    }*/
+    }
 }
