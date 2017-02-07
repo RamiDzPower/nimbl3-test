@@ -14,11 +14,6 @@ var purify = require('gulp-purifycss');
 var svgSprite = require("gulp-svg-sprites");
 
 
-// Basic Gulp task syntax
-// gulp.task('hello', function() {
-//   console.log('Hello!');
-// })
-
 // Development Tasks 
 // -----------------
 
@@ -31,14 +26,27 @@ gulp.task('browserSync', function() {
   })
 })
 
+
+// Sass Compiler
 gulp.task('sass', function() {
-  return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
-    .pipe(sass()) // Passes it through a gulp-sass
-    .pipe(gulp.dest('app/css')) // Outputs it in the css folder
-    .pipe(browserSync.reload({ // Reloading with Browser Sync
+  return gulp.src('app/scss/**/*.scss') 
+    .pipe(sass()) 
+    .pipe(gulp.dest('app/css')) 
+    .pipe(browserSync.reload({ 
       stream: true
     }));
 })
+
+
+// CSS autoprifixer
+gulp.task('autoprefix', () =>
+    gulp.src('app/css/**/*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('app/css'))
+);
 
 // Watchers
 gulp.task('watch', ['browserSync', 'sass'], function() {
@@ -56,9 +64,7 @@ gulp.task('useref', function() {
 
   return gulp.src('app/*.html')
     .pipe(assets)
-    // Minifies only if it's a CSS file
     .pipe(gulpIf('*.css', minifyCSS()))
-    // Uglifies only if it's a Javascript file
     .pipe(gulpIf('*.js', uglify()))
     .pipe(assets.restore())
     .pipe(useref())
@@ -68,7 +74,6 @@ gulp.task('useref', function() {
 // Optimizing Images 
 gulp.task('images', function() {
   return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
-  // Caching images that ran through imagemin
   .pipe(cache(imagemin({
       interlaced: true,
     })))
@@ -97,6 +102,7 @@ gulp.task('csspure', function() {
     .pipe(gulp.dest('app/testpure'));
 });
 
+//SVG Generator
 gulp.task('sprites', function () {
     return gulp.src('app/images/*.svg')
         .pipe(svgSprite())
