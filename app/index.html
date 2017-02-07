@@ -100,7 +100,7 @@
 			<form action="#" class="search-head">
 				<span class="icon-search">
 					<input type="text" placeholder="Search here" class="search-head-input">
-					<i class="icon sprite-icon btn-toggle"></i>				
+					<i class="icon sprite-icon btn-toggle expose"></i>				
 				</span>
 			</form>
 		</div>
@@ -163,7 +163,7 @@
 		<div class="second-line">
 			<form action="#" class="add-prod-form">
 				<i class="icon sprits-icon icon-add-prod"></i>
-				<input type="text" placeholder="Add Products" class="add-prod-input" id="add-prod-input">
+				<input type="text" placeholder="Add Products" class="add-prod-input expose" id="add-prod-input">
 			</form>
 		</div>
 
@@ -349,41 +349,57 @@
 	<footer class="mobile-foot">
 		<img src="images/poweredby.svg" alt="Powered By Nimbl3">
 	</footer>
+	<div id="overlay"></div>
 </main>
   
   <!--build:js js/main.min.js -->
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/slideout.min.js"></script>
   <script>
-  var input = document.getElementById('add-prod-input');
-	var message = document.getElementsByClassName('popup-container')[0];
-	input.addEventListener('focus', function() {
-	    message.style.display = 'block';
-	});
-	input.addEventListener('focusout', function() {
-	    message.style.display = 'none';
-	});
+	  // open popup table on focus input
 
-	$("#add-prod-input").focus(function(){
-			$(".content-header").addClass("blur");
-			$(".content-wrap").addClass("blur");
-			$(".icon-add-prod").addClass("icon-remove-prod");
-		}).blur(function(){
-			$(".content-header").removeClass("blur");
-			$(".content-wrap").removeClass("blur");
-			$(".icon-add-prod").removeClass("icon-remove-prod");
+	  	var input = document.getElementById('add-prod-input');
+		var popup = document.getElementsByClassName('popup-container')[0];
+		input.addEventListener('focus', function() {
+		    popup.style.display = 'block';
+		});
+		input.addEventListener('focusout', function() {
+		    popup.style.display = 'none';
 		});
 
-  	var slideout = new Slideout({
-	    'panel': document.getElementById('panel'),
-	    'menu': document.getElementById('menu'),
-	    'padding': 256,
-	    'tolerance': 70
-	  });
+		// Overlay on focus input
 
-  	document.querySelector('.btn-toggle').addEventListener('click', function() {
-        slideout.toggle();
-      });
+		$('.expose').click(function(e){
+		    $(this).css('z-index','99999');
+		    $('#overlay').fadeIn(300);
+		});
+
+		$('#overlay').click(function(e){
+		    $('#overlay').fadeOut(300, function(){
+		        $('.expose').css('z-index','1');
+		    });
+		});
+
+		// Changing icon on focus input
+
+		$("#add-prod-input").focus(function(){
+				$(".icon-add-prod").addClass("icon-remove-prod");
+			}).blur(function(){
+				$(".icon-add-prod").removeClass("icon-remove-prod");
+		});
+
+		// Sliding menu on mobile 
+
+	  	var slideout = new Slideout({
+		    'panel': document.getElementById('panel'),
+		    'menu': document.getElementById('menu'),
+		    'padding': 256,
+		    'tolerance': 70
+		  });
+
+	  	document.querySelector('.btn-toggle').addEventListener('click', function() {
+	        slideout.toggle();
+	      });
   </script>
   <!-- endbuild -->
 </body>
