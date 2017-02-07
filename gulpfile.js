@@ -64,7 +64,7 @@ gulp.task('useref', function() {
 
   return gulp.src('app/*.html')
     .pipe(assets)
-    .pipe(gulpIf('*.css', minifyCSS()))
+    .pipe(gulpIf('app/*.css', minifyCSS()))
     .pipe(gulpIf('*.js', uglify()))
     .pipe(assets.restore())
     .pipe(useref())
@@ -96,6 +96,7 @@ gulp.task('clean:dist', function(callback) {
   del(['dist/**/*', '!dist/images', '!dist/images/**/*'], callback)
 });
 
+// prettyfy css js html
 gulp.task('csspure', function() {
   return gulp.src('app/css/**/*.css')
     .pipe(purify(['/app/js/**/*.js', 'app/**/*.html']))
